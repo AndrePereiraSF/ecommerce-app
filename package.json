@@ -6,13 +6,18 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development",
+    "inspect": "esw"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "eslint": "^7.7.0",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "eslint-watch": "^7.0.0",
     "html-loader": "^1.3.0",
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.44.1",
