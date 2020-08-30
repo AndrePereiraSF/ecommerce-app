@@ -6,7 +6,7 @@ import {
   faShoppingCart,
   faLeaf,
   faSeedling,
-  faTint,
+  faTshirt,
   faWater,
   faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,7 @@ library.add(
   faShoppingCart,
   faLeaf,
   faSeedling,
-  faTint,
+  faTshirt,
   faWater,
   faChevronUp,
   faFacebookF,
