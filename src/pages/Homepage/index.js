@@ -13,15 +13,19 @@ import {
   FooterBackgroundContainer,
   AboutContainer,
   BenefitsContainer,
-  BenefitsFlexRow,
+  BenefitItem,
   ContactContainer,
   FooterContainer,
   ButtonToTheTop,
   SocialMedia,
   StoreInfo,
+  ProductList,
+  Title
 } from './styles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import benefits from '../../utils/constants/benefits';
 
 const products = [
   {
@@ -59,17 +63,15 @@ export default function Homepage() {
 
       <TitleBackgroundContainer>
         <TitleContainer>
-          <h1 id="title">
-            THRIFTSHOP DESIGNS
-          </h1>
+          <h1 id="title">THRIFTSHOP DESIGNS</h1>
           <Divider />
           <h2 id="subtitle">COLEÇÃO URBANA</h2>
         </TitleContainer>
       </TitleBackgroundContainer>
 
       <ShopContainer>
-        <h2>COMPRAR</h2>
-        <ShopContainer>
+        <Title>COMPRAR</Title>
+        <ProductList>
           {products.map((product, index) => {
             return (
               <ProductContainer key={index}>
@@ -79,11 +81,11 @@ export default function Homepage() {
               </ProductContainer>
             );
           })}
-        </ShopContainer>
+        </ProductList>
       </ShopContainer>
 
       <AboutContainer>
-        <h2>Sobre</h2>
+        <Title color="#000">SOBRE</Title>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non
           imperdiet enim, nec lacinia dui. Nam at pellentesque nunc. Nulla massa
@@ -94,31 +96,20 @@ export default function Homepage() {
           porta efficitur lacus.
         </p>
         <BenefitsContainer>
-          <BenefitsFlexRow>
-            <div id="organic">
-              <FontAwesomeIcon icon="leaf" size="3x" />
-              Orgânico
-            </div>
-            <div id="cotton">
-              <FontAwesomeIcon icon="seedling" size="3x" />
-              100% Algodão
-            </div>
-          </BenefitsFlexRow>
-          <BenefitsFlexRow>
-            <div id="water-proof">
-              <FontAwesomeIcon icon="tint" size="3x" />À prova d'água
-            </div>
-            <div id="washable">
-              <FontAwesomeIcon icon="water" size="3x" />
-              Lavável
-            </div>
-          </BenefitsFlexRow>
+          {benefits.map((item, index) => {
+            return (
+              <BenefitItem key={index}>
+                <FontAwesomeIcon icon={item.icon} size="3x" />
+                <br />{item.title}
+              </BenefitItem>
+            );
+          })}
         </BenefitsContainer>
       </AboutContainer>
 
       <FooterBackgroundContainer>
         <ContactContainer>
-          <h2>CONTATO</h2>
+          <Title>CONTATO</Title>
           <p>(00) 00000-0000 / contato@email.com</p>
           <p>Av. Fulano Beltrano, 154 - São Paulo - SP - CEP: 12345-678</p>
         </ContactContainer>
@@ -130,9 +121,9 @@ export default function Homepage() {
           Topo
         </ButtonToTheTop>
         <SocialMedia>
-          <FontAwesomeIcon icon={['fab', 'facebook-f']} size="2x" />
-          <FontAwesomeIcon icon={['fab', 'instagram']} size="2x" />
-          <FontAwesomeIcon icon={['fab', 'twitter']} size="2x" />
+          <FontAwesomeIcon className="social-icon" icon={['fab', 'facebook-f']} size="2x" />
+          <FontAwesomeIcon className="social-icon" icon={['fab', 'instagram']} size="2x" />
+          <FontAwesomeIcon className="social-icon" icon={['fab', 'twitter']} size="2x" />
         </SocialMedia>
         <StoreInfo>
           ©2020 por André Pereira. Thriftshop Designs Ltda. - CPF/CNPJ:
