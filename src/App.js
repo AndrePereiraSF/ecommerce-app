@@ -13,7 +13,7 @@ import {
 
 import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-import Homepage from './pages/Homepage/index.js';
+import Routes from './Routes';
 
 library.add(
   faBars,
@@ -45,7 +45,7 @@ export default function App() {
   return (
     <>
       <GlobalStyle whiteColor />
-      <Homepage />
+      <Routes />
     </>
   );
 }
