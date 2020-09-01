@@ -7,7 +7,7 @@ const StyledLink = styled(Link)`
   transition: opacity .5s;
 
   &:hover {
-    opacity: ${({ disableHover }) => disableHover ? 0 : .5}
+    opacity: ${({ disableHover }) => disableHover ? 1 : .5}
   }
 `;
 
