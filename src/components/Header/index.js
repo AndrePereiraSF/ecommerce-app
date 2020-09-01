@@ -7,6 +7,8 @@ import {
   CartContainer,
   CartCounter,
   MobileHeader,
+  MobileMenu,
+  DrawerButton,
   TitleBackgroundContainer,
   TitleContainer,
   Divider,
@@ -16,6 +18,11 @@ import StyledLink from '../StyledLink';
 
 export default function Header() {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const handleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
 
   const handleMediaQueryChange = (mediaQuery) => {
     if (mediaQuery.matches) {
@@ -66,13 +73,34 @@ export default function Header() {
           </StyledLink>
         </WebHeader>
         : 
-        <MobileHeader id="homepage">
-          <FontAwesomeIcon icon="bars" size="3x" />
-          <CartContainer>
-            <FontAwesomeIcon icon="shopping-cart" size="3x" />
-            <CartCounter>0</CartCounter>
-          </CartContainer>
-        </MobileHeader>
+        <>
+          <MobileMenu open={isDrawerOpen}>
+            <DrawerButton onClick={handleDrawer}>
+              <FontAwesomeIcon icon="times" size="3x" />
+            </DrawerButton>
+            <StyledLink smooth to="#homepage" onClick={handleDrawer}>
+              Página Inicial
+            </StyledLink>
+            <StyledLink smooth to="#shop" onClick={handleDrawer}>
+              Loja
+            </StyledLink>
+            <StyledLink smooth to="#about" onClick={handleDrawer}>
+              Sobre
+            </StyledLink>
+            <StyledLink smooth to="#contact" onClick={handleDrawer}>
+              Contato
+            </StyledLink>
+          </MobileMenu>
+          <MobileHeader id="homepage">
+            <DrawerButton onClick={handleDrawer}>
+              <FontAwesomeIcon icon="bars" size="3x" />
+            </DrawerButton>
+            <CartContainer>
+              <FontAwesomeIcon icon="shopping-cart" size="3x" />
+              <CartCounter>0</CartCounter>
+            </CartContainer>
+          </MobileHeader>
+        </>
       }
 
       <TitleBackgroundContainer>

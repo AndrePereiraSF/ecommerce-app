@@ -15,6 +15,40 @@ export const MobileHeader = styled.div`
   }
 `;
 
+export const DrawerButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+
+  &:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+  }
+`;
+
+export const MobileMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  background: #FFF;
+  height: 100vh;
+  position: fixed;
+  transform: ${({ open }) => open ? 'translateX(0)' : 'TranslateX(-100%)'};
+  transition: transform 0.3s ease-in-out;
+
+  & > :first-child {
+    padding: 6% 8%;
+    text-align: left;
+    /* color: #FFF; */
+  }
+
+  & > *:not(:first-child) {
+    padding: 8% 8%;
+    font-size: 36px;
+    /* color: #FFF; */
+  }
+`;
+
 export const WebHeader = styled.div`
   background: #faa014;
   height: 90px;
@@ -56,6 +90,11 @@ export const CartContainer = styled.div`
   align-items: center;
   background: none;
   border: none;
+  
+  &:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+  }
 `;
 
 export const TitleBackgroundContainer = styled.div`
