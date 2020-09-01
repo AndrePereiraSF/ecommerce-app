@@ -4,14 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   WebHeader,
   Nav,
-  CartContainer,
+  CartIconContainer,
   CartCounter,
   MobileHeader,
   MobileMenu,
-  DrawerButton,
-  TitleBackgroundContainer,
-  TitleContainer,
-  Divider,
+  DrawerButton
 } from './styles';
 
 import StyledLink from '../StyledLink';
@@ -47,21 +44,21 @@ export default function Header() {
       {isLargeScreen ? 
         <WebHeader id="homepage">
           <Nav>
-            <StyledLink smooth to="#homepage">
+            <StyledLink smooth to="/#homepage">
               <span>Página Inicial</span>
             </StyledLink>
-            <StyledLink smooth to="#shop">
+            <StyledLink smooth to="/#shop">
               <span>Loja</span>
             </StyledLink>
-            <StyledLink smooth to="#about">
+            <StyledLink smooth to="/#about">
               <span>Sobre</span>
             </StyledLink>
-            <StyledLink smooth to="#contact">
+            <StyledLink smooth to="/#contact">
               <span>Contato</span>
             </StyledLink>
           </Nav>
-          <StyledLink>
-            <CartContainer>
+          <StyledLink to="/cart">
+            <CartIconContainer>
               <FontAwesomeIcon
                 id="cart"
                 color="#000"
@@ -69,7 +66,7 @@ export default function Header() {
                 size="3x"
               />
               <CartCounter>0</CartCounter>
-            </CartContainer>
+            </CartIconContainer>
           </StyledLink>
         </WebHeader>
         : 
@@ -78,16 +75,16 @@ export default function Header() {
             <DrawerButton onClick={handleDrawer}>
               <FontAwesomeIcon icon="times" size="3x" />
             </DrawerButton>
-            <StyledLink smooth to="#homepage" onClick={handleDrawer}>
+            <StyledLink smooth to="/#homepage" onClick={handleDrawer}>
               Página Inicial
             </StyledLink>
-            <StyledLink smooth to="#shop" onClick={handleDrawer}>
+            <StyledLink smooth to="/#shop" onClick={handleDrawer}>
               Loja
             </StyledLink>
-            <StyledLink smooth to="#about" onClick={handleDrawer}>
+            <StyledLink smooth to="/#about" onClick={handleDrawer}>
               Sobre
             </StyledLink>
-            <StyledLink smooth to="#contact" onClick={handleDrawer}>
+            <StyledLink smooth to="/#contact" onClick={handleDrawer}>
               Contato
             </StyledLink>
           </MobileMenu>
@@ -95,21 +92,15 @@ export default function Header() {
             <DrawerButton onClick={handleDrawer}>
               <FontAwesomeIcon icon="bars" size="3x" />
             </DrawerButton>
-            <CartContainer>
-              <FontAwesomeIcon icon="shopping-cart" size="3x" />
-              <CartCounter>0</CartCounter>
-            </CartContainer>
+            <StyledLink disableHover to="/cart">
+              <CartIconContainer>
+                <FontAwesomeIcon icon="shopping-cart" size="3x" />
+                <CartCounter>0</CartCounter>
+              </CartIconContainer>
+            </StyledLink>
           </MobileHeader>
         </>
       }
-
-      <TitleBackgroundContainer>
-        <TitleContainer>
-          <h1 id="title">THRIFTSHOP DESIGNS</h1>
-          <Divider />
-          <h2 id="subtitle">COLEÇÃO URBANA</h2>
-        </TitleContainer>
-      </TitleBackgroundContainer>
     </>
   );
 }

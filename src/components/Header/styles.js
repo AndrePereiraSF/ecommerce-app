@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import ClothesBackgroundImg from '../../assets/images/bg-clothes.jpg';
-
 export const MobileHeader = styled.div`
   background: #faa014;
   height: 12vh;
@@ -30,7 +28,7 @@ export const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
   width: 70%;
-  background: #FFF;
+  background: #fff;
   height: 100vh;
   position: fixed;
   transform: ${({ open }) => open ? 'translateX(0)' : 'TranslateX(-100%)'};
@@ -39,13 +37,11 @@ export const MobileMenu = styled.div`
   & > :first-child {
     padding: 6% 8%;
     text-align: left;
-    /* color: #FFF; */
   }
 
   & > *:not(:first-child) {
     padding: 8% 8%;
-    font-size: 36px;
-    /* color: #FFF; */
+    font-size: 32px;
   }
 `;
 
@@ -85,74 +81,14 @@ export const CartCounter = styled.div`
   color: #fff;
 `;
 
-export const CartContainer = styled.div`
+export const CartIconContainer = styled.div`
   display: flex;
   align-items: center;
   background: none;
   border: none;
-  
+
   &:active {
     transform: scale(0.9);
     transition: 0.1s;
   }
-`;
-
-export const TitleBackgroundContainer = styled.div`
-  height: 70vh;
-  background-image: url(${ClothesBackgroundImg});
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (min-width: 1100px) {
-    height: 80vh;
-  }
-`;
-
-export const TitleContainer = styled.div`
-  outline: 1px solid #fff;
-  outline-offset: -6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  color: #fff;
-  height: 35%;
-  width: 85%;
-  text-align: center;
-
-  #title {
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  #subtitle {
-    font-weight: normal;
-    font-size: 24px;
-  }
-
-  @media (min-width: 1100px) {
-    height: 40%;
-    width: 40%;
-
-    #title {
-      font-size: 44px;
-      font-weight: bold;
-    }
-
-    #subtitle {
-      font-weight: normal;
-      font-size: 36px;
-    }
-  }
-`;
-
-export const Divider = styled.hr`
-  width: 80%;
-  margin: 1rem 0;
 `;
