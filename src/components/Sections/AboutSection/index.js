@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Title from '../Title';
+import Title from '../../Title';
 import { AboutContainer, BenefitsContainer, BenefitItem } from './styles';
 
-import benefits from '../../utils/constants/benefits';
+import benefits from '../../../utils/constants/benefits';
 
 export default function AboutSection() {
   return (

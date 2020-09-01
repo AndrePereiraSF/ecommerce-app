@@ -1,13 +1,14 @@
 import React from 'react';
 
-import Title from '../Title';
+import Title from '../../Title';
 import {
   ShopContainer,
   ProductList,
   ProductContainer,
   ProductImage,
-  ShopButton,
 } from './styles';
+
+import Button from '../../Button';
 
 const products = [
   {
@@ -63,7 +64,7 @@ export default function StoreSection() {
               <ProductImage src={product.image} />
               <span id="product-name">{product.name}</span>
               <span id="product-price">{product.price}</span>
-              <ShopButton>Adicionar ao carrinho</ShopButton>
+              <Button>Adicionar ao carrinho</Button>
             </ProductContainer>
           );
         })}

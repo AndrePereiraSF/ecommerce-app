@@ -4,7 +4,7 @@ import {
   ContactBackgroundContainer,
   ContactContainer
 } from './styles';
-import Title from '../Title';
+import Title from '../../Title';
 
 export default function ContactSection() {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import ShopBackgroundImg from '../../assets/images/bg-shop.jpg';
+import ShopBackgroundImg from '../../../assets/images/bg-shop.jpg';
 
 export const ContactBackgroundContainer = styled.div`
   height: 80vh;

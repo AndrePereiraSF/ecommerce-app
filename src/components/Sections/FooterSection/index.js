@@ -8,7 +8,7 @@ import {
   StoreInfo
 } from './styles';
 
-import StyledLink from '../StyledLink';
+import StyledLink from '../../StyledLink';
 
 export default function FooterSection() {
   return (

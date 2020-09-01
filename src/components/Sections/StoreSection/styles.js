@@ -71,22 +71,3 @@ export const ProductImage = styled.img`
   }
 `;
 
-export const ShopButton = styled.div`
-  background: #faa014;
-  color: #000;
-  border: 1px solid #000;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-size: 24px;
-  transition: background 0.2s, color 0.2s;
-  cursor: pointer;
-
-  @media (min-width: 1100px) {
-    &:hover {
-      background: #000;
-      color: #fff;
-      border-color: #fff;
-    }
-  }
-`;
