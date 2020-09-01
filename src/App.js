@@ -9,9 +9,17 @@ import {
   faTshirt,
   faWater,
   faChevronUp,
-  faTimes
+  faTimes,
+  faPlus,
+  faMinus,
+  faTag,
+  faScroll
 } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 import Routes from './Routes';
 
@@ -26,7 +34,11 @@ library.add(
   faFacebookF,
   faInstagram,
   faTwitter,
-  faTimes
+  faTimes,
+  faPlus,
+  faMinus,
+  faTag,
+  faScroll
 );
 
 const GlobalStyle = createGlobalStyle`
