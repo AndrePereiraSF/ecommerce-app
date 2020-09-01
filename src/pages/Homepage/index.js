@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import StyledLink from '../../components/StyledLink';
-import StoreSection from '../../components/StoreSection';
-import AboutSection from '../../components/AboutSection';
-import ContactSection from '../../components/ContactSection';
-import FooterSection from '../../components/FooterSection';
-import Header from '../../components/Header';
+import HomeSection from '../../components/Sections/HomeSection';
+import StoreSection from '../../components/Sections/StoreSection';
+import AboutSection from '../../components/Sections/AboutSection';
+import ContactSection from '../../components/Sections/ContactSection';
 
 export default function Homepage() {
-  
-
   return (
     <>
-      <Header />
+      <HomeSection />
       <StoreSection />
       <AboutSection />
       <ContactSection />
-      <FooterSection />
     </>
   );
 }
