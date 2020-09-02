@@ -44,16 +44,16 @@ export default function Header() {
       {isLargeScreen ? 
         <WebHeader id="homepage">
           <Nav>
-            <StyledLink smooth to="/#homepage">
+            <StyledLink smooth to="/homepage#homepage">
               <span>Página Inicial</span>
             </StyledLink>
-            <StyledLink smooth to="/#shop">
+            <StyledLink smooth to="/homepage#shop">
               <span>Loja</span>
             </StyledLink>
-            <StyledLink smooth to="/#about">
+            <StyledLink smooth to="/homepage#about">
               <span>Sobre</span>
             </StyledLink>
-            <StyledLink smooth to="/#contact">
+            <StyledLink smooth to="/homepage#contact">
               <span>Contato</span>
             </StyledLink>
           </Nav>
@@ -75,16 +75,16 @@ export default function Header() {
             <DrawerButton onClick={handleDrawer}>
               <FontAwesomeIcon icon="times" size="3x" />
             </DrawerButton>
-            <StyledLink smooth to="/#homepage" onClick={handleDrawer}>
+            <StyledLink smooth to="/homepage#homepage" onClick={handleDrawer}>
               Página Inicial
             </StyledLink>
-            <StyledLink smooth to="/#shop" onClick={handleDrawer}>
+            <StyledLink smooth to="/homepage#shop" onClick={handleDrawer}>
               Loja
             </StyledLink>
-            <StyledLink smooth to="/#about" onClick={handleDrawer}>
+            <StyledLink smooth to="/homepage#about" onClick={handleDrawer}>
               Sobre
             </StyledLink>
-            <StyledLink smooth to="/#contact" onClick={handleDrawer}>
+            <StyledLink smooth to="/homepage#contact" onClick={handleDrawer}>
               Contato
             </StyledLink>
           </MobileMenu>
