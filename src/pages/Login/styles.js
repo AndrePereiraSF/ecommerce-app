@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ShopBackgroundImg from '../../assets/images/bg-shop.jpg';
 
 export const LoginPageContainer = styled.div`
   display: flex;
@@ -6,10 +7,16 @@ export const LoginPageContainer = styled.div`
   width: 100vw;
   justify-content: center;
   align-items: center;
+  background-image: url(${ShopBackgroundImg});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const LoginContainer = styled.div`
   display: flex;
+  background: #000;
   flex-direction: column;
   color: #fff;
   padding: 50px 0;
@@ -19,7 +26,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   border: 1px solid white;
 
-  @media (min-width: 1100px) {
+  @media (min-width: 600px) {
     width: 40vw;
   }
 `;
@@ -27,6 +34,17 @@ export const LoginContainer = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  width: 75%;
+`;
+
+export const ErrorMessage = styled.small`
+  color: red;
+  height: 20px;
+  width: 100%;
+
+  @media (min-width: 750px) {
+    font-size: 18px;
+  }
 `;
 
 export const InputLabel = styled.span`
@@ -48,10 +66,6 @@ export const Submit = styled.input`
   text-align: center;
   font-size: 24px;
   cursor: pointer;
-
-  @media (min-width: 1100px) {
-    
-  }
 `;
 
 export const SignUpContainer = styled.div`
