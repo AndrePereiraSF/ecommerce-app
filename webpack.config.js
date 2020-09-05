@@ -39,6 +39,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
+    proxy: {
+      "/.netlify": {
+        target: "http://localhost:9000",
+        pathRewrite: { "^/.netlify/functions": "" }
+      }
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({
