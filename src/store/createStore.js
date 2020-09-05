@@ -1,4 +1,4 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 
 export default (reducers, middlewares) => {
   applyMiddleware(...middlewares);
