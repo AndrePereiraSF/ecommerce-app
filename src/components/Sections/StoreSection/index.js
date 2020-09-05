@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import Title from '../../Title';
 import {
@@ -9,51 +10,17 @@ import {
 } from './styles';
 
 import Button from '../../Button';
+import { CartActions } from '../../../store/reducers/cart';
+import { useUserSelector } from '../../../store/reducers/user';
 
-const products = [
-  {
-    name: 'Shirt',
-    image: 'https://i.imgur.com/eTnEEiI.png',
-    price: 'R$60,00',
-  },
-  {
-    name: 'Jacket',
-    image: 'https://i.imgur.com/AN9JzuV.png',
-    price: 'R$120,00',
-  },
-  {
-    name: 'Shoes',
-    image: 'https://i.imgur.com/xKqVAhA.png',
-    price: 'R$180,00',
-  },
-  {
-    name: 'Jeans',
-    image: 'https://i.imgur.com/jii68d0.png',
-    price: '$90,00',
-  },
-  {
-    name: 'Shoes',
-    image: 'https://i.imgur.com/xKqVAhA.png',
-    price: 'R$180,00',
-  },
-  {
-    name: 'Jeans',
-    image: 'https://i.imgur.com/jii68d0.png',
-    price: '$90,00',
-  },
-  {
-    name: 'Shoes',
-    image: 'https://i.imgur.com/xKqVAhA.png',
-    price: 'R$180,00',
-  },
-  {
-    name: 'Jeans',
-    image: 'https://i.imgur.com/jii68d0.png',
-    price: '$90,00',
-  },
-];
+export default function StoreSection({ products }) {
+  const dispatch = useDispatch();
+  const { cart_id } = useUserSelector();
 
-export default function StoreSection() {
+  const AddItemToCart = item => {
+    dispatch(CartActions.addToCart(item, cart_id));
+  };
+
   return (
     <ShopContainer id="shop">
       <Title>COMPRAR</Title>
@@ -61,10 +28,12 @@ export default function StoreSection() {
         {products.map((product, index) => {
           return (
             <ProductContainer key={index}>
-              <ProductImage src={product.image} />
-              <span id="product-name">{product.name}</span>
-              <span id="product-price">{product.price}</span>
-              <Button>Adicionar ao carrinho</Button>
+              <ProductImage src={product.data.image} />
+              <span id="product-name">{product.data.name}</span>
+              <span id="product-price">R${product.data.price}</span>
+              <Button onClick={() => AddItemToCart(product.data)}>
+                Adicionar ao carrinho
+              </Button>
             </ProductContainer>
           );
         })}
