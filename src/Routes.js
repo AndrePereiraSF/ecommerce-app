@@ -7,16 +7,19 @@ import FooterSection from './components/Sections/FooterSection';
 import Header from './components/Header';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { useUserSelector } from './store/reducers/user';
+
 
 export default function Routes() {
+  const userState = useUserSelector();
   return (
     <BrowserRouter>
-      <Route path="/login" component={Login} />
+      {userState.token ? <Header /> : null}
+      <Route exact path="/" component={Login} />
       <Route path="/register" component={Register} />
-      {/* <Header /> */}
       <Route path="/homepage" exact component={Homepage} />
       <Route path="/cart" component={Cart} />
-      {/* <FooterSection /> */}
+      {userState.token ? <FooterSection /> : null}
     </BrowserRouter>
   );
 }

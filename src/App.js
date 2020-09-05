@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -13,14 +14,17 @@ import {
   faPlus,
   faMinus,
   faTag,
-  faScroll
+  faScroll,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
+
 import {
   faFacebookF,
   faInstagram,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
+import { store } from './store';
 import Routes from './Routes';
 
 library.add(
@@ -38,7 +42,8 @@ library.add(
   faPlus,
   faMinus,
   faTag,
-  faScroll
+  faScroll,
+  faSignOutAlt
 );
 
 const GlobalStyle = createGlobalStyle`
@@ -56,9 +61,9 @@ const GlobalStyle = createGlobalStyle`
 
 export default function App() {
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle whiteColor />
       <Routes />
-    </>
+    </Provider>
   );
 }
