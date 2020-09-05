@@ -24,17 +24,17 @@ exports.handler = async (event, context) => {
 
     const { id, user_id } = event.queryStringParameters;
 
-    const response = await client.query(
+    await client.query(
       q.Update(q.Ref(q.Collection('carts'), id), cart)
     );
 
-    const createdCart = await client.query(
+    const response = await client.query(
       q.Create(q.Collection('carts'), newCart)
     );
 
     const user = {
       data: {
-        cart_id: createdCart.ref.value.id,
+        cart_id: response.ref.value.id,
       },
     };
 

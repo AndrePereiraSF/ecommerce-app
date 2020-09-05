@@ -8,6 +8,7 @@ exports.handler = async (event, context) => {
       secret: event.headers.authorization,
     });
 
+
     const { id } = event.queryStringParameters;
 
     const response = await client.query(

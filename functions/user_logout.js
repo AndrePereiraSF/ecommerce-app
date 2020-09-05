@@ -10,9 +10,11 @@ exports.handler = async (event, context) => {
 
     const data = await client.query(q.Logout(true));
     const response = {
-      message: data ? 'Successfully Logout' : 'Couldn\'t logout. Try Again later.'
-    }; 
-    
+      message: data
+        ? 'Successfully Logout'
+        : 'Couldn\'t logout. Try Again later.',
+    };
+
     return {
       statusCode: 200,
       body: JSON.stringify(response),

@@ -8,17 +8,19 @@ exports.handler = async (event, context) => {
       secret: event.headers.authorization,
     });
 
-    const { id } = event.queryStringParameters;
-    const { products } = JSON.parse(event.body);
+    const { cart_id } = event.queryStringParameters;
+    const { cart } = JSON.parse(event.body);
+
+    cart.items.shift();
 
     const cartUpdate = {
       data: {
-        products,
+        products: cart.items,
       },
     };
 
     const response = await client.query(
-      q.Update(q.Ref(q.Collection('carts'), id), cartUpdate)
+      q.Update(q.Ref(q.Collection('carts'), cart_id), cartUpdate)
     );
 
     return {

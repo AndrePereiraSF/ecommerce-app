@@ -10,11 +10,20 @@ exports.handler = async (event, context) => {
 
     const { email, password } = JSON.parse(event.body);
 
-    const response = await client.query(
+    let response = await client.query(
       q.Login(q.Match(q.Index('users_by_email'), email), {
         password,
       })
     );
+
+    const user = await client.query(
+      q.Get(q.Ref(q.Collection('users'), response.instance.value.id))
+    );
+
+    response = {
+      ...response,
+      cart_id: user.data.cart_id,
+    };
 
     return {
       statusCode: 200,
