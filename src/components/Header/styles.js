@@ -52,11 +52,38 @@ export const WebHeader = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 2%;
 
   button:focus {
     outline: none;
   }
+`;
+
+export const UserInfo = styled.div`
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const LogoutContainer = styled.div`
+  align-self: flex-start;
+  border-radius: 8px;
+  background: #000;
+  padding: 0 6px;
+  margin-top: 2px;  
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.1s;
+  }
+`;
+
+export const LogoutButton = styled.button`
+  margin-left: 5px;
+  color: #fff;
+  font-size: 14px;
+  background: none;
+  border: none;
 `;
 
 export const Nav = styled.nav`
